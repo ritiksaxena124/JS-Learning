@@ -1,2 +1,2 @@
 #### Throttling: 
-- Reducing the number of execution of a code 
+Reducing the number of execution of a code 
