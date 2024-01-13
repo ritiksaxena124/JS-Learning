@@ -1,6 +1,4 @@
 let panelBtm = document.querySelector("#pbtm");
-let bubbleSet = "";
-let timer = 60;
 let score = 0;
 let hitVal; 
 
@@ -10,10 +8,11 @@ function onLoad() {
     setHit();
     showBubblesInPanel();
     runTimer();
-    setScore();
+    document.querySelector("#score-count").textContent = score;
 }
 
 function showBubblesInPanel() {
+    let bubbleSet = "";
     for (let i = 1; i <= 70; i++) {
         let randomNumber = Math.floor(Math.random() * 70) + 1;
         let bubble = `<div class="bubble"><span class="number">${randomNumber}</span></div>`
@@ -24,18 +23,22 @@ function showBubblesInPanel() {
 
 
 function runTimer() {
+    let timer = 30;
     let timerVal = setInterval(() => {
         if (timer > 0) {
             timer--;
             document.querySelector("#timer-count").innerHTML = timer;
         } else {
             clearInterval(timerVal);
-            document.querySelector("#pbtm").innerHTML = `<h1>Game Over</h1>`;
+            document.querySelector("#pbtm").innerHTML = `<div id="end-state"><h1>Your Score is ${score}</h1>
+            <button id="btn" onclick="retry()">Retry</button></div>
+            `;
         }
     }, 1000);
 }
 
-function setScore() {
+function increaseScore() {
+    score += 10;
     document.querySelector("#score-count").textContent = score;
 }
 
@@ -44,4 +47,19 @@ function setHit() {
     document.querySelector("#hit-val").textContent = hitVal;
 }
 
+function retry() {
+    score = 0;
+    document.querySelector("#score-count").textContent = score;
+    setHit();
+    showBubblesInPanel();
+    runTimer();
+}
 
+document.querySelector("#pbtm").addEventListener("click", (e) => {
+    let hit_val = Number(e.target.textContent);
+    if(hit_val === hitVal){
+        increaseScore();
+        showBubblesInPanel()
+        setHit();
+    }
+})
