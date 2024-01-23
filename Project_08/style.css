@@ -82,3 +82,22 @@ nav h1 {
     font-weight: 500;
     line-height: 0.7;
 }
+
+#page2 {
+    width: 100%;
+    height: 100vh;
+    padding: 6vw 3vw;
+}
+
+.elem {
+    overflow: hidden;
+}
+
+.elem > h1 {
+    font-weight: 400;
+    font-size: 4vw;
+}
+
+.elem:nth-child(1) {
+    padding-left: 8vw;
+}
