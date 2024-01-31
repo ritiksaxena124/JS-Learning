@@ -31,7 +31,18 @@ function heroAnimation() {
 
 const scroll = new LocomotiveScroll({
     el: document.querySelector("#main"),
-    smooth: true 
+    smooth: true
 })
 
 onLoad();
+
+
+let elems = document.querySelectorAll(".elem");
+let page2 = document.querySelector("#page2");
+elems.forEach(function (item) {
+    item.addEventListener("mouseenter", () => {
+        imgURL = item.getAttribute("data-img");
+        page2.style.backgroundImage = `url(${imgURL})`
+    })
+})
+

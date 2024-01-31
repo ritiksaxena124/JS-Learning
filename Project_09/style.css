@@ -80,6 +80,91 @@ body {
     width: 100%;
     height: 100vh;
     background-color: #000;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#page2 .elem {
+    position: relative;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    cursor: pointer;
+}
+
+#page2 .elem:hover .moving {
+    transform: translateY(-50%) scaleY(1);
+}
+
+#page2 .elem:hover h2 {
+    opacity: 1;
+    font-style: italic;
+    color: #000;
+}
+
+#page2 .elem h2 {
+    font-size: 6vw;
+    font-weight: 100;
+    line-height: 5vw;
+    text-transform: uppercase;
+}
+
+
+#page2 .elem .moving {
+    background-color: #F5E41B;
+    width: 100%;
+    white-space: nowrap;
+    padding: 0.25rem 0;
+    position: absolute;
+    top: 50%;
+    transition: all 0.25s ease-in;
+    transform: translateY(-50%) scaleY(0);
+    z-index: -1;
+}
+
+#page2 .elem .moving .blur-background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translate(0%, -50%);
+    background: radial-gradient(circle, rgba(245,228,27,1) 15%, rgba(245,228,27,0) 100%);
+    z-index: 1;
+}
+
+#page2 .elem .moving .moving-in {
+    display: inline-block;
+    animation-name: moving-animation;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+#page2 .elem .moving .moving-in h5 {
+    display: inline-block;
+    color: #000;
+    white-space: nowrap;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 16px;
+    margin: 0 1rem;
+    font-family: "Qanelas Soft";
+}
+
+@keyframes moving-animation {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+
 }
 
 #page3 {
