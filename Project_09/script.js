@@ -1,5 +1,6 @@
 function onLoad() {
     heroAnimation();
+    scrollToTop();
 
 }
 
@@ -45,4 +46,8 @@ elems.forEach(function (item) {
         page2.style.backgroundImage = `url(${imgURL})`
     })
 })
-
+function scrollToTop() {
+    document.querySelector("#footer").addEventListener("click", function () {
+        scroll.scrollTo(0)
+    });
+}
