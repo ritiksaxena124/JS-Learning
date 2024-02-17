@@ -1,7 +1,7 @@
 const About = () => {
     return (
         <>
-            <div className="w-full bg-[#CDEA68] pt-20 px-20 pb-12 rounded-tl-2xl rounded-tr-2xl">
+            <div data-scroll data-scroll-speed="-0.25" className="w-full bg-[#CDEA68] pt-20 px-20 pb-12 rounded-tl-2xl rounded-tr-2xl">
                 <h1 className="text-black text-[3.5vw] tracking-tight leading-[4.5vw] pr-[4vw]">Ochi is a strategic partner for fast-grow­ing tech businesses that need to raise funds, sell prod­ucts, ex­plain com­plex ideas, and hire great peo­ple.</h1>
                 <div className="w-full flex border-t-2 border-[#A1B562] mt-16 pt-8">
                     <div className="w-full">

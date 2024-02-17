@@ -1,7 +1,8 @@
+import { motion } from "framer-motion";
 const HeroSection = () => {
     return (
         <>
-            <div className="px-12 w-full h-screen pt-1">
+            <div data-scroll data-scroll-speed="-0.1" className="px-12 w-full h-screen pt-1">
                 <div className="text-structure mt-40">
                     <div className="masker">
                         <h1 className="uppercase font-semibold text-[7vw] leading-[6.5vw] tracking-tighter">We create</h1>
@@ -9,9 +10,9 @@ const HeroSection = () => {
 
                     <div className="masker">
                         <div className="w-fit flex items-center overflow-hidden">
-                            <div className="w-[9.5vw] h-[6vw] rounded-md mr-[1vw] overflow-hidden">
+                            <motion.div initial={{width: 0}} animate={{width: "9.5vw"}} transition={{ease: "linear", duration: 1}} className="w-[9.5vw] h-[6vw] rounded-md mr-[1vw] overflow-hidden">
                                 <img src="https://ochi.design/wp-content/uploads/2022/04/content-image01.jpg" alt="" className="w-full h-full object-cover" />
-                            </div>
+                            </motion.div>
                             <h1 className="uppercase font-semibold text-[7vw] leading-[6.5vw] tracking-tighter">Eye-opening</h1>
                         </div>
                     </div>
